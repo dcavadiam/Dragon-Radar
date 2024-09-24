@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useQuery } from 'react-query';
 import { fetchData } from "@/services/fetchApi";
-import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "@/lib/icons/arrows";
+import { ChevronLeft, ChevronRight } from "@/lib/icons/arrows";
 import { useState } from "react";
 
 export default function Home() {
@@ -50,9 +50,7 @@ export default function Home() {
         </ul>
       </div>
       <div className="flex justify-center items-center w-full gap-3">
-        <span className="px-4 py-2 bg-gray-800 rounded-lg">
-          <ChevronsLeft />
-        </span>
+       
         <span className="px-4 py-2 bg-gray-800 rounded-lg cursor-pointer" onClick={handlePreviousPage}>
           <ChevronLeft />
         </span>
@@ -60,9 +58,7 @@ export default function Home() {
         <span className="px-4 py-2 bg-gray-800 rounded-lg cursor-pointer" onClick={handleNextPage}>
           <ChevronRight />
         </span>
-        <span className="px-4 py-2 bg-gray-800 rounded-lg ">
-          <ChevronsRight />
-        </span>
+        
       </div>
       <footer className="flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
         <p className="text-center text-gray-400">
@@ -72,4 +68,3 @@ export default function Home() {
     </div>
   )
 }
-

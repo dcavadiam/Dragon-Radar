@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { useQuery } from 'react-query';
 import { fetchData } from "@/services/fetchApi";
-import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "@/lib/icons/arrows";
 import { useState } from "react";
+import { Item, Meta } from "@/lib/definitions";
+import { Pagination } from "@/lib/components/pagination";
 
 export default function Home() {
 
@@ -17,17 +18,29 @@ export default function Home() {
   if (isLoading) return <h1>Loading...</h1>
   if (isError) return <h1>Error</h1>
 
+  const {
+    totalPages,
+    currentPage,
+  }: Meta | undefined = data?.meta;
+
   const handleClickCharacter = (id: number) => {
     window.location.href = `/character/${id}`
   }
 
-  const handleNextPage = () => {
+  const handleNextPage = (): void => {
     setPage(page + 1);
     console.log(page);
   }
-  const handlePreviousPage = () => {
+  const handlePreviousPage = (): void => {
     setPage(page - 1);
     console.log(page);
+  }
+
+  const handleFirstPage = (): void => {
+    setPage(1);
+  }
+  const handleLastPage = (): void => {
+    setPage(totalPages);
   }
 
   return (
@@ -41,29 +54,22 @@ export default function Home() {
           {
             data?.items.map(item => (
               <li key={item.id} className="flex flex-col items-center ">
+                <Image onClick={() => handleClickCharacter(item.id)} loader={() => item.image} src={item.image} alt={item.name} className="w-[200px] h-[300px] rounded-lg hover:scale-105 hover:duration-200 object-contain" width={200} height={300} />
                 <p className="text-xl">{item.name}</p>
-                <Image onClick={() => handleClickCharacter(item.id)} loader={() => item.image} src={item.image} alt={item.name} className="rounded-lg hover:scale-105 hover:duration-200" width={200} height={300} />
 
               </li>
             ))
           }
         </ul>
       </div>
-      <div className="flex justify-center items-center w-full gap-3">
-        <span className="px-4 py-2 bg-gray-800 rounded-lg">
-          <ChevronsLeft />
-        </span>
-        <span className="px-4 py-2 bg-gray-800 rounded-lg cursor-pointer" onClick={handlePreviousPage}>
-          <ChevronLeft />
-        </span>
-        <span className="px-4 py-2 bg-gray-800 rounded-lg ">Pagina {data?.meta.currentPage}</span>
-        <span className="px-4 py-2 bg-gray-800 rounded-lg cursor-pointer" onClick={handleNextPage}>
-          <ChevronRight />
-        </span>
-        <span className="px-4 py-2 bg-gray-800 rounded-lg ">
-          <ChevronsRight />
-        </span>
-      </div>
+      <Pagination 
+        currentPage={currentPage} 
+        totalPages={totalPages} 
+        handleNextPage={handleNextPage} 
+        handlePreviousPage={handlePreviousPage} 
+        handleFirstPage={handleFirstPage} 
+        handleLastPage={handleLastPage}
+      />
       <footer className="flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
         <p className="text-center text-gray-400">
           Made with ❤️ by <a href="https://github.com/dcavadiam" target="_blank">dcavadiam</a>

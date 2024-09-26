@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useQuery } from 'react-query';
 import { fetchData } from "@/services/fetchApi";
 import { useState } from "react";
-import { Item, Meta } from "@/lib/definitions";
+import { Meta } from "@/lib/definitions";
 import { Pagination } from "@/lib/components/pagination";
 
 export default function Home() {
@@ -62,12 +62,12 @@ export default function Home() {
           }
         </ul>
       </div>
-      <Pagination 
-        currentPage={currentPage} 
-        totalPages={totalPages} 
-        handleNextPage={handleNextPage} 
-        handlePreviousPage={handlePreviousPage} 
-        handleFirstPage={handleFirstPage} 
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        handleNextPage={handleNextPage}
+        handlePreviousPage={handlePreviousPage}
+        handleFirstPage={handleFirstPage}
         handleLastPage={handleLastPage}
       />
       <footer className="flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">

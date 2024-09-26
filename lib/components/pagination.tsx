@@ -14,7 +14,7 @@ export const Pagination = ({ totalPages, currentPage, handleNextPage, handlePrev
         <div className="flex justify-center items-center w-full gap-3">
             {
                 currentPage > 1 ? (
-                    <span className="px-4 py-2 bg-gray-800 rounded-lg" onClick={handleFirstPage}>
+                    <span className="px-4 py-2 bg-gray-800 rounded-lg cursor-pointer" onClick={handleFirstPage}>
                         <ChevronsLeft status="enabled" />
                     </span>
                 ) : (
@@ -49,7 +49,7 @@ export const Pagination = ({ totalPages, currentPage, handleNextPage, handlePrev
             }
             {
                 currentPage < totalPages ? (
-                    <span className="px-4 py-2 bg-gray-800 rounded-lg " onClick={handleLastPage}>
+                    <span className="px-4 py-2 bg-gray-800 rounded-lg cursor-pointer" onClick={handleLastPage}>
                         <ChevronsRight status="enabled" />
                     </span>
                 ) : (

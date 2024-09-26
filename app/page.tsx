@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 import { fetchData } from "@/services/fetchApi";
 import { useState } from "react";
 import { Meta, Item } from "@/lib/definitions";
-import { Pagination } from "@/lib/components/pagination";
+import { Pagination } from "./components/pagination";
 
 export default function Home() {
 

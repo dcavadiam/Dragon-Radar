@@ -13,13 +13,21 @@ function Characters() {
     if (error) {
         return <h1>{error}</h1>;
     }
+
     return (
-        <main className="flex flex-wrap justify-center items-center min-h-screen py-[4rem]">
-            {
-                characters.map((character) => (
-                   <CharacterCard key={character.id} character={character} />
-                ))
-            }
+        <main>
+            <div className="flex flex-wrap justify-center items-center min-h-screen py-[4rem]">
+                {
+                    characters.map((character) => (
+                        <CharacterCard key={character.id} character={character} />
+                    ))
+                }
+            </div>
+            <div>
+                <button>
+
+                </button>
+            </div>
         </main>
     );
 }

@@ -1,4 +1,5 @@
-const API = process.env.NEXT_PUBLIC_SITE_URL;
+const API = process.env.NEXT_PUBLIC_VERCEL_URL;
+
 
 export const getEndpoint = ({endpoint, id}:{endpoint:string, id?:string}) => {
   switch (endpoint) {

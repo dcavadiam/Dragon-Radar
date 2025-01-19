@@ -12,7 +12,7 @@ export const Header = () => {
                 <p className="text-4xl font-bold font-saiyan text-saiyanYellow text-border">Dragon<span className="text-saiyanRed ml-2">Radar</span></p>
             </Link>
 
-            <nav className="flex items-center space-x-4 w-fit">
+            <nav className="flex items-center gap-2 space-x-4 w-fit">
                 <a className="font-bold hover:text-saiyanYellow duration-300 hover:scale-105" href="#">
                     <span className="w-fit flex gap-1">
                         <IconUser stroke={1.5} />

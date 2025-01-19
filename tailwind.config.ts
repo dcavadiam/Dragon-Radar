@@ -16,6 +16,10 @@ export default {
       },
       fontFamily: {
         saiyan: ["Saiyan", "sans-serif"],
+        permanentMarker: ["Permanent Marker", "cursive"],
+      },
+      dropShadow: {
+        custom: "0 0 5px rgba(0, 0, 0, 0.5)",
       },
     },
   },

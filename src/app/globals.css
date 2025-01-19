@@ -24,10 +24,23 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.mask-gradient {
+    mask-image: linear-gradient(to bottom, black 50%, transparent 80%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 80%);
+}
+
 /* Definir la fuente personalizada usando @font-face */
 @font-face {
   font-family: "Saiyan";
   src: url("/fonts/SaiyanSans/Saiyan-Sans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Definir la fuente personalizada usando @font-face */
+@font-face {
+  font-family: "Permanent Marker";
+  src: url("/fonts/PermanentMarker/PermanentMarker-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
